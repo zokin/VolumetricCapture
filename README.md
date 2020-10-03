@@ -1,8 +1,28 @@
 # A Portable, Flexible and Facile Volumetric Capture System
 > Moving beyond green screens as well as stationary, expensive and hard to use setups  
+
+[![Project Page](http://img.shields.io/badge/Volumetric-Capture-blueviolet.svg?style=plastic)](https://vcl3d.github.io/VolumetricCapture/)
+[![Conference](http://img.shields.io/badge/SITIS-2018-blue.svg?style=plastic)]()
+[![Paper](http://img.shields.io/badge/paper-arxiv.1909.01207-critical.svg?style=plastic)](https://arxiv.org/pdf/1909.01207.pdf)
+
+
+[![Project Page](http://img.shields.io/badge/Volumetric-Calibration-blueviolet.svg?style=plastic)](https://vcl3d.github.io/StructureNet/)
+[![Conference](http://img.shields.io/badge/IEEEVR-2020-blue.svg?style=plastic)](http://ieeevr.org/2020/)
+[![Paper](http://img.shields.io/badge/paper-arxiv.2003.10176-critical.svg?style=plastic)](https://arxiv.org/pdf/2003.10176.pdf)
+[![Conference](http://img.shields.io/badge/WSCG-2018-blue.svg?style=plastic)]()
+[![Paper](http://img.shields.io/badge/paper-iti-critical.svg?style=plastic)](https://www.iti.gr/iti/files/document/publications/S05-Markerless%20Structure-based%20Calibration.pdf)
+
+
 _______
 
-![Volumetric Capture Banner](./doc/header.jpg)
+![Volumetric Capture Banner](./doc/header.png)
+
+
+_______
+# News
+An early alpha release of the Kinect Azure is now available for [download](https://github.com/VCL3D/VolumetricCapture/releases/tag/4.0.1).
+It also includes an updated multi-sensor calibration that allows for greater flexibility in terms of sensor numbers and placement. More information can be found [here](https://vcl3d.github.io/StructureNet/) __\[[8](#StructureNet)\]__.
+
 
 _______
 ## Overview
@@ -20,19 +40,16 @@ It is a research oriented but flexible and optimized software that can be / has 
 ## Design
 
 The toolset is designed as a distributed system where a number of processing units each manage and collect data from a single sensor using a headless application.
-A set of sensors is orchestrated by a UI application that is also the delivery point of the connected sensor streams.
-Communication is handled by a broker, typically co-hosted with the controlling application, albeit not necessary.
+A set of sensors is orchestrated by a centralized UI application that is also the delivery point of the connected sensor streams.
+Communication is handled by a broker, typically co-hosted with the controlling application, although not necessary.
 
 ## Sensors
 
-We currently only support [Intel RealSense D415](https://www.intelrealsense.com/) sensors.
+We now support [Intel RealSense D415](https://www.intelrealsense.com/) and [Azure Kinect DK](https://azure.microsoft.com/en-in/services/kinect-dk/) sensors.
 
-However, __[Azure Kinect DK](https://azure.microsoft.com/en-in/services/kinect-dk/) is coming soon__.
-
-| RGBD-Sensor  | Compatibility |
-| :-------------: | :-------------: |
-| <img alt="Intel RealSense D415" src="./doc/stereo_DT_d415_front-crop1a-1.png" width="200">  | <div width="200">✔️</div>  |
-| <img alt="Azure Kinect DK" src="./doc/k4a.png" width="150">  | <div width="200">⏳</div>  |
+| Intel RealSense D415  |  Microsoft Kinect Azure |
+|:-------------------------:|:-------------------------:|
+| <img alt="Intel RealSense D415" src="./doc/stereo_DT_d415_front-crop1a-1.png" width="100"> | <img alt="Azure Kinect DK" src="./doc/k4a.png" width="100"> |
 
 
 ## Highlights
@@ -58,7 +75,10 @@ _______
 
 ## Download
 
-Check our [releases](https://github.com/VCL3D/VolumetricCapture/releases), major release coming during October 2019.
+Check our [releases](https://github.com/VCL3D/VolumetricCapture/releases), __an early alpha release is now available__ with:
+
+- __Kinect Azure support__, and
+- The [StructureNet](https://vcl3d.github.io/StructureNet/) volumetric alignment method that can support a flexible number of sensor .
 
 ## Usage
 
@@ -95,3 +115,7 @@ We currently only ship binaries for the Windows platform, supporting Windows 10.
 <a name="DeepMoCap"/> __\[5\]__ Chatzitofis, A., Zarpalas, D., Kollias, S. and Daras, P., 2019. [DeepMoCap: Deep Optical Motion Capture Using Multiple Depth Sensors and Retro-Reflectors](https://www.mdpi.com/1424-8220/19/2/282). Sensors, 19(2), p.282.
 
 <a name="Markerless"/> __\[6\]__ Papachristou, A., Zioulis, N., Zarpalas, D., and Daras, P., 2018. [Markerless structure-based multi-sensor calibration for free viewpoint video capture](https://www.iti.gr/iti/files/document/publications/S05-Markerless%20Structure-based%20Calibration.pdf), International Conference on Computer Graphics, Visualization and Computer Vision (WSCG).
+
+<a name="Denoising"/> __\[7\]__ Sterzentsenko V., Saroglou L., Chatzitofis A., Thermos S., Zioulis N., Doumanoglou A., Zarpalas D., Daras P., 2019. [Self-Supervised Deep Depth Denoising](https://www.iti.gr/iti/files/document/publications/190901193b.pdf), International Conference on Computer Vision (ICCV)
+
+<a name="StructureNet"/> __\[8\]__ Sterzentsenko V., Doumanoglou, A., Thermos S., Zioulis N., Zarpalas D., Daras P., 2020. [Deep Soft Procrustes for Markerless Volumetric Sensor Alignment](https://arxiv.org/pdf/2003.10176.pdf), IEEE Conference on Virtual Reality and 3D User Interfaces (VR)
